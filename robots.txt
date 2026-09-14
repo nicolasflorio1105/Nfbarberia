@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nicolasflorio1105.github.io/Nfbarberia/sitemap.xml
