@@ -1,0 +1,47 @@
+/* =========================================================
+   VARIABLES.CSS
+   Tokens de marca NF Barbería. Si mañana cambia un color,
+   una tipografía o un espaciado, se edita ACÁ y se actualiza
+   en todo el sitio automáticamente.
+   ========================================================= */
+
+:root{
+
+  /* ---- Color: paleta de marca (negro / dorado / marfil) ---- */
+  --color-black:        #121110;  /* fondo principal */
+  --color-charcoal:     #1c1a18;  /* fondo secundario, tarjetas */
+  --color-gold:         #b8925a;  /* dorado base (bordes, líneas) */
+  --color-gold-bright:  #d4af6a;  /* dorado destacado (títulos, íconos) */
+  --color-ivory:        #f3ede2;  /* texto principal */
+  --color-ivory-dim:    #c9c0ae;  /* texto secundario */
+  --color-line:         #3a352e;  /* separadores */
+
+  /* ---- Tipografía ---- */
+  --font-display: 'Fraunces', serif;      /* títulos */
+  --font-body:    'Work Sans', sans-serif; /* texto */
+
+  /* ---- Espaciado (escala consistente, en vez de números sueltos) ---- */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-8: 64px;
+
+  /* ---- Layout ---- */
+  --content-width: 640px;   /* ancho máximo del contenido, igual al sitio original */
+  --radius: 2px;            /* esquinas: el sitio usa un estilo recto, casi sin redondeo */
+
+  /* ---- Altura de la barra fija de WhatsApp/Reserva ---- */
+  --sticky-h: 60px;
+
+  /* ---- Transiciones ---- */
+  --ease: 200ms ease;
+}
+
+/* Respeta a quienes desactivaron animaciones en su sistema operativo */
+@media (prefers-reduced-motion: reduce){
+  :root{ --ease: 0ms; }
+}

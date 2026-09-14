@@ -1,0 +1,123 @@
+/* =========================================================
+   SECTIONS.CSS
+   Estilos que sólo aplican a una sección puntual del sitio.
+   Cada bloque está separado y comentado para que sumar o
+   sacar una sección no rompa a las demás.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   HERO — impacto y posicionamiento
+   --------------------------------------------------------- */
+.hero{
+  padding:var(--space-8) 0 var(--space-7);
+  position:relative;
+}
+.hero__mark{
+  font-family:var(--font-display);
+  font-size:15px;
+  letter-spacing:0.14em;
+  color:var(--color-gold-bright);
+  margin-bottom:var(--space-4);
+}
+.hero__logo{ width:104px; height:auto; margin-bottom:var(--space-4); }
+.hero__title{
+  font-size:clamp(38px, 9vw, 54px);
+  max-width:9ch;
+}
+.hero__title em{ font-style:italic; color:var(--color-gold-bright); }
+.hero__lede{
+  margin-top:18px;
+  font-size:17px;
+  color:var(--color-ivory-dim);
+  max-width:34ch;
+}
+.hero__cta{
+  display:flex;
+  gap:12px;
+  margin-top:var(--space-5);
+  flex-wrap:wrap;
+}
+.hero__rating{ margin-top:var(--space-4); }
+
+/* ---------------------------------------------------------
+   SHOWREEL — video principal
+   El <video> se autoreproduce SIN sonido (requisito de los
+   navegadores) y en loop. Si el visitante quiere sonido,
+   toca el botón de mute. Respeta "reduced motion": si la
+   persona desactivó animaciones en su SO, no autoreproduce.
+   --------------------------------------------------------- */
+.showreel{ padding-top:0; }
+/* NOTA: tu video es vertical (formato Reel, 9:16) — el marco
+   respeta esa proporción en vez de forzar un recorte horizontal
+   16:9 que te cortaría la cara. En pantallas anchas se limita el
+   ancho para que no quede gigante y se centra. */
+.showreel__frame{
+  position:relative;
+  border:1px solid var(--color-line);
+  background:var(--color-charcoal);
+  overflow:hidden;
+  aspect-ratio:9/16;
+  max-width:360px;
+  margin:0 auto;
+}
+.showreel__frame video{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+}
+.showreel__sound{
+  position:absolute;
+  bottom:14px; right:14px;
+  width:40px; height:40px;
+  border-radius:50%;
+  background:rgba(18,17,16,0.7);
+  border:1px solid var(--color-line);
+  color:var(--color-ivory);
+  display:flex; align-items:center; justify-content:center;
+}
+.showreel__sound svg{ width:18px; height:18px; }
+.showreel__caption{
+  margin-top:14px;
+  text-align:center;
+  font-size:14px;
+  color:var(--color-ivory-dim);
+}
+.showreel__caption a{ color:var(--color-gold-bright); font-weight:500; }
+
+/* ---------------------------------------------------------
+   POR QUÉ NF BARBERÍA (antes "La experiencia NF")
+   Reutiliza .row-list / .row-item de components.css
+   --------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   UBICACIÓN
+   --------------------------------------------------------- */
+.location-note{
+  margin-top:var(--space-3);
+  font-size:14px;
+  color:var(--color-ivory-dim);
+  background:var(--color-charcoal);
+  border:1px solid var(--color-line);
+  padding:14px 16px;
+  border-radius:var(--radius);
+}
+.map-frame{ margin-top:var(--space-4); }
+.map-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--color-gold-bright);
+  font-weight:500;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+footer{
+  padding:var(--space-5) 0 var(--space-6);
+  font-size:13px;
+  color:var(--color-ivory-dim);
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
