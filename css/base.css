@@ -81,6 +81,11 @@ section:last-of-type{ border-bottom:none; }
   color:var(--color-gold-bright);
   margin-bottom:22px;
 }
+.section-lede{
+   color:var(--color-ivory-dim);
+   margin-bottom:20px;
+   max-width:42ch;
+}
 
 .reveal{
   opacity:0;
