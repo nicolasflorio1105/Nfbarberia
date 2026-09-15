@@ -1,30 +1,25 @@
 /**
- * main.js
- * ---------------------------------------------------------
- * Punto de entrada único. Cada funcionalidad vive en su
- * propio archivo (módulo) adentro de /js — esto es lo que
- * pediste como "modulado para poder escalar": para agregar
- * una función nueva mañana (por ej. un formulario, un mapa
- * interactivo, etc.) se crea un archivo nuevo en /js y se
- * importa acá abajo, sin tocar el resto.
- *
- * Al ser type="module" en el HTML, el navegador entiende
- * los imports/exports nativamente: no hace falta ningún
- * empaquetador (webpack/vite) ni build step para que esto
- * funcione en GitHub Pages.
- *
- * (gallery.js se sacó del proyecto junto con la sección
- * "Selección de trabajos", y showreel.js junto con el video
- * — si en algún momento los volvés a sumar, esos módulos
- * habían quedado listos en versiones anteriores del proyecto)
+ * reveal.js
+ * Hace que cada seccion aparezca con una entrada suave la
+ * primera vez que entra en pantalla al hacer scroll. Una
+ * sola vez por seccion, no en loop.
  */
 
-import { initAnalyticsTracking } from './analytics.js';
-import { initReviewCarousel } from './reviews.js';
-import { initScrollReveal } from './reveal.js';
+export function initScrollReveal(){
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
 
-document.addEventListener('DOMContentLoaded', function () {
-  initAnalyticsTracking();
-  initReviewCarousel();
-  initScrollReveal();
-});
+  const targets = document.querySelectorAll('.reveal');
+  if (!targets.length) return;
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  targets.forEach(function (el) { observer.observe(el); });
+}
