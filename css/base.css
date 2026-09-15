@@ -38,7 +38,13 @@ button{ font:inherit; cursor:pointer; background:none; border:none; color:inheri
 .wrap{
   max-width:var(--content-width);
   margin:0 auto;
-  padding:0 24px;
+  /* CORREGIDO: antes esto era "padding:0 24px" (shorthand), que por
+     especificidad de CSS pisaba el padding vertical de "section" y
+     de "footer" dejándolo en 0 — por eso se veía todo pegado. Ahora
+     solo toca los costados y deja que cada sección maneje su propio
+     espacio arriba/abajo. */
+  padding-left:24px;
+  padding-right:24px;
 }
 
 /* ---- Accesibilidad: foco visible con el color de marca ----
