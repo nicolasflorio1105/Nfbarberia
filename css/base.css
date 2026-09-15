@@ -1,16 +1,14 @@
 /* =========================================================
    BASE.CSS
-   Reset mínimo + tipografía base + utilidades de accesibilidad.
-   No hay estilos de secciones específicas acá: eso vive en
-   sections.css. Esto es lo que comparte TODA la página.
+   Reset minimo + tipografia base + utilidades de accesibilidad.
+   No hay estilos de secciones especificas aca: eso vive en
+   sections.css. Esto es lo que comparte TODA la pagina.
    ========================================================= */
 
 *{ box-sizing:border-box; margin:0; padding:0; }
 
 html{
   scroll-behavior:smooth;
-  /* deja lugar arriba para que la barra fija no tape el destino
-     de un link interno (ej: "Servicios" en un futuro menú) */
   scroll-padding-top: calc(var(--sticky-h) + 12px);
 }
 
@@ -20,7 +18,6 @@ body{
   font-family:var(--font-body);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
-  /* espacio para que la barra fija (position:fixed) no tape el Hero */
   padding-top:var(--sticky-h);
 }
 
@@ -38,23 +35,15 @@ button{ font:inherit; cursor:pointer; background:none; border:none; color:inheri
 .wrap{
   max-width:var(--content-width);
   margin:0 auto;
-  /* CORREGIDO: antes esto era "padding:0 24px" (shorthand), que por
-     especificidad de CSS pisaba el padding vertical de "section" y
-     de "footer" dejándolo en 0 — por eso se veía todo pegado. Ahora
-     solo toca los costados y deja que cada sección maneje su propio
-     espacio arriba/abajo. */
   padding-left:24px;
   padding-right:24px;
 }
 
-/* ---- Accesibilidad: foco visible con el color de marca ----
-   (el sitio original no lo definía explícitamente) */
 :focus-visible{
   outline:2px solid var(--color-gold-bright);
   outline-offset:3px;
 }
 
-/* ---- Utilidad: ocultar visualmente pero dejar accesible a lectores de pantalla ---- */
 .sr-only{
   position:absolute;
   width:1px; height:1px;
@@ -65,7 +54,6 @@ button{ font:inherit; cursor:pointer; background:none; border:none; color:inheri
   border:0;
 }
 
-/* ---- Skip link: invisible hasta que se navega con teclado (Tab) ---- */
 .skip-link{
   position:absolute;
   top:-100px;
@@ -81,8 +69,6 @@ button{ font:inherit; cursor:pointer; background:none; border:none; color:inheri
 }
 .skip-link:focus{ top:12px; }
 
-/* ---- Secciones: estructura común a toda sección de contenido ----
-   Espaciado grande a propósito: pediste más aire entre secciones. */
 section{
   padding:var(--space-9) 0;
   border-bottom:1px solid var(--color-line);
@@ -91,5 +77,20 @@ section:last-of-type{ border-bottom:none; }
 
 .h2{
   font-size:26px;
+  font-weight:600;
+  color:var(--color-gold-bright);
   margin-bottom:22px;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity 500ms ease, transform 500ms ease;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
 }
