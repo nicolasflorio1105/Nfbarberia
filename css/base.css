@@ -75,9 +75,10 @@ button{ font:inherit; cursor:pointer; background:none; border:none; color:inheri
 }
 .skip-link:focus{ top:12px; }
 
-/* ---- Secciones: estructura común a toda sección de contenido ---- */
+/* ---- Secciones: estructura común a toda sección de contenido ----
+   Espaciado grande a propósito: pediste más aire entre secciones. */
 section{
-  padding:var(--space-7) 0;
+  padding:var(--space-9) 0;
   border-bottom:1px solid var(--color-line);
 }
 section:last-of-type{ border-bottom:none; }

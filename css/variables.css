@@ -29,6 +29,7 @@
   --space-6: 48px;
   --space-7: 56px;
   --space-8: 64px;
+  --space-9: 88px;  /* separación entre secciones — pedido explícito: más espacio */
 
   /* ---- Layout ---- */
   --content-width: 640px;   /* ancho máximo del contenido, igual al sitio original */

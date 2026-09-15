@@ -40,51 +40,6 @@
 .hero__rating{ margin-top:var(--space-4); }
 
 /* ---------------------------------------------------------
-   SHOWREEL — video principal
-   El <video> se autoreproduce SIN sonido (requisito de los
-   navegadores) y en loop. Si el visitante quiere sonido,
-   toca el botón de mute. Respeta "reduced motion": si la
-   persona desactivó animaciones en su SO, no autoreproduce.
-   --------------------------------------------------------- */
-.showreel{ padding-top:0; }
-/* NOTA: tu video es vertical (formato Reel, 9:16) — el marco
-   respeta esa proporción en vez de forzar un recorte horizontal
-   16:9 que te cortaría la cara. En pantallas anchas se limita el
-   ancho para que no quede gigante y se centra. */
-.showreel__frame{
-  position:relative;
-  border:1px solid var(--color-line);
-  background:var(--color-charcoal);
-  overflow:hidden;
-  aspect-ratio:9/16;
-  max-width:360px;
-  margin:0 auto;
-}
-.showreel__frame video{
-  width:100%; height:100%;
-  object-fit:cover;
-  display:block;
-}
-.showreel__sound{
-  position:absolute;
-  bottom:14px; right:14px;
-  width:40px; height:40px;
-  border-radius:50%;
-  background:rgba(18,17,16,0.7);
-  border:1px solid var(--color-line);
-  color:var(--color-ivory);
-  display:flex; align-items:center; justify-content:center;
-}
-.showreel__sound svg{ width:18px; height:18px; }
-.showreel__caption{
-  margin-top:14px;
-  text-align:center;
-  font-size:14px;
-  color:var(--color-ivory-dim);
-}
-.showreel__caption a{ color:var(--color-gold-bright); font-weight:500; }
-
-/* ---------------------------------------------------------
    POR QUÉ NF BARBERÍA (antes "La experiencia NF")
    Reutiliza .row-list / .row-item de components.css
    --------------------------------------------------------- */
@@ -108,13 +63,15 @@
   gap:10px;
   color:var(--color-gold-bright);
   font-weight:500;
+  transition:color var(--ease);
 }
+.map-cta:hover{ color:var(--color-ivory); }
 
 /* ---------------------------------------------------------
    FOOTER
    --------------------------------------------------------- */
 footer{
-  padding:var(--space-5) 0 var(--space-6);
+  padding:var(--space-8) 0 var(--space-6);
   font-size:13px;
   color:var(--color-ivory-dim);
   display:flex;
