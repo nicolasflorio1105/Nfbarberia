@@ -14,17 +14,15 @@
  * funcione en GitHub Pages.
  *
  * (gallery.js se sacó del proyecto junto con la sección
- * "Selección de trabajos" — si en algún momento la volvés
- * a sumar, ese módulo había quedado listo en versiones
- * anteriores del proyecto)
+ * "Selección de trabajos", y showreel.js junto con el video
+ * — si en algún momento los volvés a sumar, esos módulos
+ * habían quedado listos en versiones anteriores del proyecto)
  */
 
 import { initAnalyticsTracking } from './analytics.js';
 import { initReviewCarousel } from './reviews.js';
-import { initShowreel } from './showreel.js';
 
 document.addEventListener('DOMContentLoaded', function () {
   initAnalyticsTracking();
   initReviewCarousel();
-  initShowreel();
 });
